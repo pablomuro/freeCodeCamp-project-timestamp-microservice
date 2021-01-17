@@ -4,7 +4,7 @@ module.exports = function (app) {
 
   app.route('/api/timestamp/:date?')
     .get((req, res) => {
-      let dateString = req.params.date ?? Date.now()
+      let dateString = req.params.date || Date.now()
       let date;
       try {
         date = new Date(Date.parse(dateString))
